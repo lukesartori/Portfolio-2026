@@ -9,43 +9,43 @@ This is a single-page portfolio website for **Elena Vasquez**, an independent di
 ## Repository Structure
 
 ```
-Portfolio-2026/                        # Git repository root
-└── portfolio-2026/
-    └── src/                           # ← Next.js project root (run commands here)
-        ├── app/
-        │   ├── globals.css            # Tailwind v4 CSS config + design tokens
-        │   ├── layout.tsx             # Root layout (fonts, metadata, Vercel Analytics)
-        │   └── page.tsx               # Single page — composes all sections
-        ├── components/
-        │   ├── navigation.tsx         # Fixed header with mobile hamburger menu
-        │   ├── hero.tsx               # Full-viewport hero section
-        │   ├── portfolio.tsx          # Project grid + ProjectCard sub-component
-        │   ├── project-detail.tsx     # Full-screen slide-up project modal
-        │   ├── about.tsx              # Portrait image + experience timeline
-        │   ├── contact.tsx            # CTA + social links
-        │   ├── footer.tsx             # Simple copyright footer
-        │   ├── theme-provider.tsx     # next-themes ThemeProvider wrapper
-        │   └── ui/                    # shadcn/ui component library (do not edit manually)
-        ├── hooks/
-        │   ├── use-mobile.ts          # useIsMobile() — viewport width check
-        │   └── use-toast.ts           # useToast() — toast notification hook
-        ├── lib/
-        │   ├── projects.ts            # Project data array + Project type definition
-        │   └── utils.ts               # cn() — clsx + tailwind-merge helper
-        ├── public/
-        │   ├── images/                # Project images (project-1.jpg … project-6.jpg, portrait.jpg)
-        │   └── icon*, apple-icon.png  # Favicon assets (light/dark variants)
-        ├── styles/
-        │   └── globals.css            # Duplicate/alternate global CSS entry
-        ├── components.json            # shadcn/ui CLI configuration
-        ├── next.config.mjs            # Next.js config
-        ├── package.json               # Dependencies and scripts
-        ├── pnpm-lock.yaml             # pnpm lockfile
-        ├── postcss.config.mjs         # PostCSS config (Tailwind v4)
-        └── tsconfig.json              # TypeScript config
+Portfolio-2026/                        # Git repository root = Next.js project root
+├── src/                               # Source code
+│   ├── app/
+│   │   ├── globals.css                # Tailwind v4 CSS config + design tokens
+│   │   ├── layout.tsx                 # Root layout (fonts, metadata, Vercel Analytics)
+│   │   └── page.tsx                   # Single page — composes all sections
+│   ├── components/
+│   │   ├── navigation.tsx             # Fixed header with mobile hamburger menu
+│   │   ├── hero.tsx                   # Full-viewport hero section
+│   │   ├── portfolio.tsx              # Project grid + ProjectCard sub-component
+│   │   ├── project-detail.tsx         # Full-screen slide-up project modal
+│   │   ├── about.tsx                  # Portrait image + experience timeline
+│   │   ├── contact.tsx                # CTA + social links
+│   │   ├── footer.tsx                 # Simple copyright footer
+│   │   ├── theme-provider.tsx         # next-themes ThemeProvider wrapper
+│   │   └── ui/                        # shadcn/ui component library (do not edit manually)
+│   ├── hooks/
+│   │   ├── use-mobile.ts              # useIsMobile() — viewport width check
+│   │   └── use-toast.ts               # useToast() — toast notification hook
+│   ├── lib/
+│   │   ├── projects.ts                # Project data array + Project type definition
+│   │   └── utils.ts                   # cn() — clsx + tailwind-merge helper
+│   └── styles/
+│       └── globals.css                # Alternate global CSS entry
+├── public/
+│   ├── images/                        # Project images (project-1.jpg … project-6.jpg, portrait.jpg)
+│   └── icon*, apple-icon.png          # Favicon assets (light/dark variants)
+├── CLAUDE.md                          # This file
+├── components.json                    # shadcn/ui CLI configuration
+├── next.config.mjs                    # Next.js config
+├── package.json                       # Dependencies and scripts
+├── pnpm-lock.yaml                     # pnpm lockfile
+├── postcss.config.mjs                 # PostCSS config (Tailwind v4)
+└── tsconfig.json                      # TypeScript config
 ```
 
-> **Important:** The Next.js project root is `portfolio-2026/src/`. All `pnpm` / `next` commands must be run from that directory.
+> **Important:** All `pnpm` / `next` commands must be run from the repository root (`Portfolio-2026/`).
 
 ## Tech Stack
 
@@ -64,11 +64,9 @@ Portfolio-2026/                        # Git repository root
 
 ## Development Commands
 
-All commands must be run from `portfolio-2026/src/`:
+All commands must be run from the repository root (`Portfolio-2026/`):
 
 ```bash
-cd portfolio-2026/src
-
 pnpm dev        # Start local dev server (http://localhost:3000)
 pnpm build      # Production build
 pnpm start      # Start production server
@@ -133,7 +131,7 @@ useEffect(() => {
 
 ### Path Aliases
 
-The `tsconfig.json` defines `@/*` to resolve from the `src/` directory:
+The `tsconfig.json` defines `@/*` to resolve from the `src/` directory (`"@/*": ["./src/*"]`):
 
 ```ts
 import { cn } from "@/lib/utils"          // → src/lib/utils.ts
@@ -161,7 +159,7 @@ interface Project {
 
 ### Adding shadcn/ui Components
 
-Use the shadcn CLI from `portfolio-2026/src/`:
+Use the shadcn CLI from the repository root:
 
 ```bash
 pnpm dlx shadcn@latest add <component-name>
